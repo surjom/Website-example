@@ -1,0 +1,31 @@
+$img_name=$_FILES['image']['name'];
+	$img_size=$_FILES['image']['size'];
+	$img_temp=$_FILES['image']['tmp_name'];
+	
+	$directory='upload/';
+	$target_file= $directory.$img_name;
+	
+
+else if(file_exists($target_file))
+		{
+			echo'<script type="text/javascript">
+			alert("Image File Already Exist.. Try Another image file")
+			</script>';
+		}
+		else if($img_size>2097152)
+		{
+			echo'<script type="text/javascript">
+			alert("Image File size larger than 2 mb. try another")
+			</script>';
+		}
+	
+	
+	move_uploaded_file($img_temp,$target_file);
+	
+	
+	
+	
+	
+	
+	
+	
